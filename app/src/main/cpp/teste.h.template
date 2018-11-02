@@ -1,0 +1,6 @@
+#ifndef AUTH_CONFIG_H
+#define AUTH_CONFIG_H
+
+static const char PRIVATE_KEY[32] = "TEST_PRIVATE_KEY_REPLACE";
+
+#endif //AUTH_CONFIG_H
