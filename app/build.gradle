@@ -30,7 +30,6 @@ dependencies {
 
 secretkey {
     templatefile = "${project.projectDir}/src/main/cpp/teste.h.template"
-    keyname = "TEST_PRIVATE_KEY_REPLACE"
-    keyvalue = "123456789"
+    keyMap = [TEST_PRIVATE_KEY_REPLACE: "11111", TEST_PRIVATE_KEY_REPLACE2: "22222", TEST_PRIVATE_KEY_REPLACE3: "33333"]
 }
-project.tasks.preBuild.dependsOn project.tasks.processkeys
+project.tasks.preBuild.dependsOn project.tasks.processKeys
