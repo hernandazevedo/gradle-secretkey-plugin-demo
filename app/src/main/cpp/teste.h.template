@@ -3,6 +3,5 @@
 
 static const char PRIVATE_KEY[32] = "TEST_PRIVATE_KEY_REPLACE";
 static const char PRIVATE_KEY2[32] = "TEST_PRIVATE_KEY_REPLACE2";
-static const char PRIVATE_KEY3[32] = "TEST_PRIVATE_KEY_REPLACE3";
 
 #endif //AUTH_CONFIG_H
