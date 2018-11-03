@@ -1,1 +1,0 @@
-variavel = "CHAVE_REAL_PROD"
