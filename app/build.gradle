@@ -10,11 +10,23 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            }
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 }
@@ -30,7 +42,7 @@ dependencies {
 
 secretkey {
     def privateKeyFromEnv = System.env.PRIVATE_KEY2 != null ? System.env.PRIVATE_KEY2 : "default value"
-    templateFile = "${project.projectDir}/src/main/cpp/teste.h.template"
+    templateFile = "${project.projectDir}/src/main/cpp/include/native-lib-config.h.template"
     keyMap = [TEST_PRIVATE_KEY_REPLACE: "11111", TEST_PRIVATE_KEY_REPLACE2: privateKeyFromEnv]
 }
 project.tasks.preBuild.dependsOn project.tasks.processKeys
